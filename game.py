@@ -4,18 +4,30 @@ from random import randint
 # the index always starts at 0
 choices = ["rock", "paper", "scissors"]
 
-player_lives = 5
-computer_lives = 5
+player_lives = 1
+computer_lives = 1
 
-total_lives = 5
+total_lives = 1
 
-#True anf False are Boolen data types -> they are the equivalent of on or off, 1 or 0
+#True and False are Boolen data types -> they are the equivalent of on or off, 1 or 0
 player = False
 
 while player is False: 
+	print("====================* A Classic Rock, Paper, Scissor Game *====================")
+	print("Computer Lives:", computer_lives, "/", total_lives)
+	print("Player Lives:", player_lives, "/", total_lives)
+	print("===============================================================================")
+
+	print("Choose your weapon wisely! or type quit to exit\n")
+	print("===============================================================================")
 
 	#this is player choice
-	player = input("Choose rock, paper or scissors: ")
+	player = input("Choose rock, paper or scissors: \n")
+
+	#if want to quit
+	if player == "quit":
+		print("You chose to quit")
+		exit()
 
 	# player = True ->it has value now
 
@@ -53,6 +65,46 @@ while player is False:
 		else:
 			print("you win!")
 			computer_lives -= 1
+
+	if player_lives == 0:
+		print("You lose! Do you want to play again?")
+		choice = input("Yes / No? ")
+
+		if choice == "No" or choice == "no":
+			print("===============================================================================")
+			print("You chose to quit! Better luck next time!")
+			print("======================================Goodbye==================================")
+			exit()
+		elif choice == "Yes" or choice == "yes":
+			#reset player live and computer lives
+			#set player to False -> loop restart
+			player_lives = 1
+			computer_lives = 1
+			player = False
+
+		else:
+			print("Make a valid choice - Yes or No ")
+			choice = input ("Yes/No: ")
+
+	if computer_lives == 0:
+		print("You Win! Do you want to play again?")
+		choice = input("Yes / No? ")
+
+		if choice == "No" or choice == "n":
+			print("===============================================================================")
+			print("You chose to quit! Thanks for playing!")
+			print("======================================Goodbye==================================")
+			exit()
+		elif choice == "Yes" or choice == "yes":
+			#reset player live and computer lives
+			#set player to False -> loop restart
+			player_lives = 1
+			computer_lives = 1
+			player = False
+		else:
+			print("Make a valid choice - Yes or No ")
+			choice = input ("Yes/No: ")
+
 	print("Player has", player_lives, "lives left")
 	print("Computer has", computer_lives, "lives left")
 
