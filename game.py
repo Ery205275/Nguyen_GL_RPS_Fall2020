@@ -27,8 +27,8 @@ def winorlose(status):
 		global player_lives
 		global computer_lives
 		global player
-		player_lives = 1
-		computer_lives = 1
+		player_lives = 3
+		computer_lives = 3
 		player = False
 
 	else:
