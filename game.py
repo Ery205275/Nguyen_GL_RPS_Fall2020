@@ -30,31 +30,8 @@ while gameVars.player is False:
 	#validate that the random choice worked for the AI
 	print("computer chose: "+ computer)
 
-	if (computer == gameVars.player):
-		comparisons.comparisons("has equal lives with")
-	elif (computer == "rock"):
-		if (gameVars.player == "scissors"):
-			comparisons.comparisons("has less lives than")
-			gameVars.player_lives -= 1
-		else:
-			comparisons.comparisons("has more lives than")
-			gameVars.computer_lives -= 1
+	comparisons.comparisons()
 
-	elif (computer == "paper"): 
-		if (gameVars.player == "rock"):
-			comparisons.comparisons("has less lives than")
-			gameVars.player_lives -= 1
-		else:
-			comparisons.comparisons("has more lives than")
-			gameVars.computer_lives -= 1
-		
-	elif (computer == "scissors"): 
-		if (gameVars.player == "paper"):
-			comparisons.comparisons("has less lives than")
-			gameVars.player_lives -= 1
-		else:
-			comparisons.comparisons("has more lives than")
-			gameVars.computer_lives -= 1
 
      
 	if gameVars.player_lives == 0:
